@@ -1,0 +1,16 @@
+name: Automatic Workflow for Main Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto_job_on_push_to_main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run automatic script on main branch
+        run: |
+          echo "This is an automatic workflow"
+          echo "It runs on every push to the main branch."
+          echo "This is useful for tasks that need to be run on every code changes in the main branch."
