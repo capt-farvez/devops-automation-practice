@@ -1,0 +1,13 @@
+name: Automatic Workflow
+
+on: [push]
+
+jobs:
+  auto_job_on_every_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run automatic script
+        run: |
+          echo "This is an automatic workflow"
+          echo "It runs on every push to any branch."
+          echo "This is useful for tasks that need to be run on every code change."
