@@ -7,11 +7,6 @@ services:
       - ./backend:/app
     ports:
       - "8000:8000"
-    environment:
-      - DEBUG=1
-      - DJANGO_SECRET_KEY=your-secret-key
+      
     entrypoint: ["./entrypoint.sh"]
     restart: unless-stopped
-
-volumes:
-  django_sqlite_data:
