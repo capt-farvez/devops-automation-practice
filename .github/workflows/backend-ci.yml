@@ -27,5 +27,5 @@ jobs:
         run: |
           docker run --rm \
             -v ${{ github.workspace }}/backend:/app \
-            django-backend \
+            myapp \
             python manage.py runserver
