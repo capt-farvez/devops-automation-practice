@@ -1,0 +1,14 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  manual_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run manual script
+        run: |
+          echo "This is a manual workflow"
+          echo "You can trigger this workflow manually from the GitHub Actions tab."
+          echo "This is useful for tasks that need to be run on demand."
