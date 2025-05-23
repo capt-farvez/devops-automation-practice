@@ -1,9 +1,7 @@
 name: Conditional Workflow
 
 on:
-  push:
-    paths:
-      - "backend/**"
+  workflow_dispatch:
 
 jobs:
   conditional-workflow-job:

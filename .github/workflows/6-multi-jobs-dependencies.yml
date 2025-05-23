@@ -1,9 +1,7 @@
 name: Multi Jobs with Dependencies
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   first-workflow-job:
