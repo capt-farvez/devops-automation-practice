@@ -1,0 +1,16 @@
+name: Conditional Workflow
+
+on:
+  push:
+    paths:
+      - "backend/**"
+
+jobs:
+  conditional-workflow-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run conditional script for backend changes
+        run: |
+          echo "This job runs only on pushes to the backend directory."
+          echo "It is useful for tasks that should only be executed on changes to the backend."
+          echo "For example, deployment tasks or notifications."
