@@ -1,0 +1,15 @@
+name: Cron Job
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Run every 5 minutes 
+
+jobs:
+  cron_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run cron job script
+        run: |
+          echo "This is a cron job workflow"
+          echo "It runs automatically based on the defined schedule."
+          echo "This is useful for tasks that need to be run at specific intervals."
+          echo "You can also trigger it manually if needed."
