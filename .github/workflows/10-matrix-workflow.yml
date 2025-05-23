@@ -15,25 +15,8 @@ jobs:
     steps:
       - name: NodeJs version
         run: |
-          node -v
-          python --version
           echo "NodeJs version: ${{ matrix.node-version }}"
+
+      - name: Python version
+        run: |
           echo "Python version: ${{ matrix.python-version }}"
-      
-      - name: Setup NodeJs
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: NodeJs version after setup
-        run: |
-          node -v
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Python version after setup
-        run: |
-          python --version
