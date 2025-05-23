@@ -21,7 +21,7 @@ RUN apk add --no-cache ffmpeg
 
 COPY . .
 # Ensure entrypoint script is executable
-RUN chmod +x ./entrypoint.sh
+RUN chmod +x backend/entrypoint.sh
 
 # Run entrypoint script
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT [".backend/entrypoint.sh"]
