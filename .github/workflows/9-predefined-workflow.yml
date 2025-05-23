@@ -6,8 +6,17 @@ on:
 jobs:
   predefined-workflow-job:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: NodeJs version
+        run: |
+          node -v
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: NodeJs version after setup
         run: |
           node -v
