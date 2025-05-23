@@ -1,0 +1,36 @@
+name: Multi Jobs with Dependencies
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  first-workflow-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first-workflow-job Step
+        run: |
+          echo "This is Job 1"
+          echo "It runs on every push to the main branch."
+          echo "This is useful for tasks that need to be run on every code changes in the main branch."
+
+  second-workflow-job:
+    runs-on: ubuntu-latest
+    needs: [first-workflow-job]
+    steps:
+      - name: second-workflow-job Step
+        run: |
+          echo "This is Job 2"
+          echo "It runs after Job 1 is completed successfully."
+          echo "This is useful for tasks that depend on the results of Job 1."
+  
+  third-workflow-job:
+    runs-on: ubuntu-latest
+    needs: [first-workflow-job, second-workflow-job]
+    steps:
+      - name: third-workflow-job Step
+        run: |
+          echo "This is Job 3"
+          echo "It runs after Job 1 and Job 2 are completed successfully."
+          echo "This is useful for tasks that depend on the results of Job 1 and Job 2."
